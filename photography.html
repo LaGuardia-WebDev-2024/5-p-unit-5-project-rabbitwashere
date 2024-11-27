@@ -3,15 +3,15 @@ Requirements
 [ yes ] <div> and <span>
 [ yes ] height: and width:
 [ yes ] margin: and padding: 
-[ yes ] Three Images
+[  ] Three Images
 
 Select ONE Additional Feature to Add  
 [ no ] Feature 1 - Flexbox
-[ yes ] Feature 2 - Flip Card
-[ yes ] Feature 3 - Navbar
+[ no ] Feature 2 - Flip Card
+[ no ] Feature 3 - Navbar
 [ no ] Feature 4 - Shaking Animation
 [ yes ] Feature 5 - Gradient Background
-[ yes ] Feature 6 - Spotify Playlist
+[ no ] Feature 6 - Spotify Playlist
 -->
 
 <!DOCTYPE html>
@@ -24,7 +24,6 @@ Select ONE Additional Feature to Add
       type="image/x-icon"
       href="https://cdn.glitch.global/2d4b4f1e-9508-4497-aebe-895bea3bfa45/mae.jpg?v=1732213349996"
     />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" >
     <style>
       @font-face {
         font-family: nitw;
@@ -35,7 +34,7 @@ Select ONE Additional Feature to Add
         background: radial-gradient(
           circle,
           rgba(255, 255, 255, 1) 25%,
-          rgba(215, 201, 170, 1) 85%
+          rgba(141, 134, 201, 1) 85%
         );
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -88,6 +87,51 @@ Select ONE Additional Feature to Add
         border-width: thick;
         border-color: black;
       }
+      /* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  background-color: dodgerblue;
+  color: white;
+  transform: rotateY(180deg);
+}
     </style>
   </head>
   <body>
@@ -96,26 +140,18 @@ Select ONE Additional Feature to Add
     <br />
     <br />
     <br />
-
     <ul class="navbox">
-      <li><a href="index.html" class="active">☆home☆</a></li>
+      <li><a href="index.html">☆home☆</a></li>
       <li><a href="music.html">☆music☆</a></li>
       <li><a href="videogames.html">☆video games☆</a></li>
       <li><a href="videography.html">★my videography★</a></li>
-      <li><a href="photography.html">★my photography★</a></li>
+      <li><a href="photography.html" class="active">★my photography★</a></li>
     </ul>
     <div class="maindiv">
-      <span><h1>Welcome to my Website!!!</h1></span>
-      <img
-        src="https://cdn.glitch.global/2d4b4f1e-9508-4497-aebe-895bea3bfa45/hi!.gif?v=1732204480903"
-        width="150px"
-      />
-      <h2>
-        If you're here then that means you're interested in me. <br />(awww I'm
-        blushing). <br />Well, look no further! This website has a lot of my
-        favorite things and my personal projects! <br />
-        Check em out!!!
-      </h2>
+<h1>
+oops...<br> this page is under construction... <br> come back soon to see more!
+      </h1>
+<img src="https://cdn.glitch.global/2d4b4f1e-9508-4497-aebe-895bea3bfa45/ferris.PNG?v=1732724667036" width="250px">
     </div>
   </body>
 </html>
